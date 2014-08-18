@@ -9,6 +9,7 @@
   
   <properties>
 		<!-- 主要依赖库的版本定义 -->
+		<share.module.version>1.0</share.module.version>
 		<springside.version>4.2.3-SNAPSHOT</springside.version>
 		<spring.version>4.0.5.RELEASE</spring.version>
 		<hibernate.version>4.3.5.Final</hibernate.version>
@@ -100,6 +101,22 @@
 			</dependency>
 			<!-- SPRINGSIDE MODULES end -->
 			
+			<dependency>
+				<groupId>com.iac</groupId>
+				<artifactId>share-core</artifactId>
+				<version>${share.module.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.iac</groupId>
+				<artifactId>share-extension</artifactId>
+				<version>${share.module.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.iac</groupId>
+				<artifactId>share-metrics</artifactId>
+				<version>${share.module.version}</version>
+			</dependency>
+			
 			<!-- spring-->
 			<!-- 纯粹为了exclude commons-loging -->
 			<dependency>
@@ -112,6 +129,18 @@
 						<artifactId>commons-logging</artifactId>
 					</exclusion>
 				</exclusions>
+			</dependency>
+			
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-context-support</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-orm</artifactId>
+				<version>${spring.version}</version>
 			</dependency>
 			
 
