@@ -6,7 +6,7 @@
 	<version>1.0</version>
 	<packaging>pom</packaging>
 	<name>parent</name>
-	<description>All my project's parent</description>
+	<description>All my project's parent </description>
 
 	<properties>
 		<!-- 主要依赖库的版本定义 -->
