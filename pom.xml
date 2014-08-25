@@ -1,13 +1,14 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>iac.dp</groupId>
-  <artifactId>parent</artifactId>
-  <version>1.0</version>
-  <packaging>pom</packaging>
-  <name>parent</name>
-  <description>All my project's parent</description>
-  
-  <properties>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>iac.dp</groupId>
+	<artifactId>parent</artifactId>
+	<version>1.0</version>
+	<packaging>pom</packaging>
+	<name>parent</name>
+	<description>All my project's parent</description>
+
+	<properties>
 		<!-- 主要依赖库的版本定义 -->
 		<share.module.version>1.0</share.module.version>
 		<springside.version>4.2.3-SNAPSHOT</springside.version>
@@ -57,28 +58,20 @@
 		<maven>3.0.0</maven>
 	</prerequisites>
 
-	<!-- 设定除中央仓库 (repo1.maven.org/maven2/)外的其他仓库,按设定顺序进行查询，如有Nexus私服, 取消注释并指向正确的服务器地址 
+	<!-- 设定除中央仓库 (repo1.maven.org/maven2/)外的其他仓库,按设定顺序进行查询，如有Nexus私服, 取消注释并指向正确的服务器地址 -->
 	<repositories>
 		<repository>
-			<id>nexus</id>
-			<name>Team Nexus Repository</name>
-			<url>http://localhost:8081/nexus/content/groups/public</url>
+			<id>osChina</id>
+			<name>osChina Repository</name>
+			<url>http://maven.oschina.net/content/groups/public</url>
 		</repository>
-	</repositories>-->
+	</repositories>
 
-	<!-- 如有Nexus私服, 取消注释并指向正确的服务器地址
-	<pluginRepositories>
-		<pluginRepository>
-			<id>nexus</id>
-			<name>Team Nexus Repository</name>
-			<url>http://localhost:8081/nexus/content/groups/public</url>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-		</pluginRepository>
-	</pluginRepositories> -->
+	<!-- 如有Nexus私服, 取消注释并指向正确的服务器地址 <pluginRepositories> <pluginRepository> 
+		<id>nexus</id> <name>Team Nexus Repository</name> <url>http://localhost:8081/nexus/content/groups/public</url> 
+		<snapshots> <enabled>false</enabled> </snapshots> </pluginRepository> </pluginRepositories> -->
 
-	<!-- 预定义依赖项的version,scope与exclusions,子项目中只需定义groupId 与  artifactId 即可 -->
+	<!-- 预定义依赖项的version,scope与exclusions,子项目中只需定义groupId 与 artifactId 即可 -->
 	<dependencyManagement>
 		<dependencies>
 			<!-- SPRINGSIDE MODULES begin -->
@@ -100,7 +93,7 @@
 				<version>${springside.version}</version>
 			</dependency>
 			<!-- SPRINGSIDE MODULES end -->
-			
+
 			<dependency>
 				<groupId>com.iac</groupId>
 				<artifactId>share-core</artifactId>
@@ -116,8 +109,8 @@
 				<artifactId>share-metrics</artifactId>
 				<version>${share.module.version}</version>
 			</dependency>
-			
-			<!-- spring-->
+
+			<!-- spring -->
 			<!-- 纯粹为了exclude commons-loging -->
 			<dependency>
 				<groupId>org.springframework</groupId>
@@ -130,19 +123,19 @@
 					</exclusion>
 				</exclusions>
 			</dependency>
-			
+
 			<dependency>
 				<groupId>org.springframework</groupId>
 				<artifactId>spring-context-support</artifactId>
 				<version>${spring.version}</version>
 			</dependency>
-			
+
 			<dependency>
 				<groupId>org.springframework</groupId>
 				<artifactId>spring-orm</artifactId>
 				<version>${spring.version}</version>
 			</dependency>
-			
+
 
 			<!-- PERSISTENCE begin -->
 			<!-- hibernate -->
@@ -193,7 +186,7 @@
 				<artifactId>mybatis-spring</artifactId>
 				<version>1.2.2</version>
 			</dependency>
-		
+
 			<!-- connection pool -->
 			<dependency>
 				<groupId>org.apache.tomcat</groupId>
@@ -210,7 +203,7 @@
 				<artifactId>spring-webmvc</artifactId>
 				<version>${spring.version}</version>
 			</dependency>
-			
+
 			<!-- sitemesh -->
 			<dependency>
 				<groupId>opensymphony</groupId>
@@ -220,7 +213,7 @@
 			</dependency>
 
 			<!-- j2ee web spec -->
-			<!-- update to servlet 3.0 for spring 4.0 MockHttpServletRequest  -->
+			<!-- update to servlet 3.0 for spring 4.0 MockHttpServletRequest -->
 			<dependency>
 				<groupId>javax.servlet</groupId>
 				<artifactId>javax.servlet-api</artifactId>
@@ -596,7 +589,7 @@
 					</exclusion>
 				</exclusions>
 			</dependency>
-			
+
 			<dependency>
 				<groupId>org.apache.httpcomponents</groupId>
 				<artifactId>fluent-hc</artifactId>
@@ -608,7 +601,7 @@
 					</exclusion>
 				</exclusions>
 			</dependency>
-			
+
 			<dependency>
 				<groupId>org.apache.httpcomponents</groupId>
 				<artifactId>httpcore</artifactId>
@@ -650,7 +643,7 @@
 				<version>${junit.version}</version>
 				<scope>test</scope>
 			</dependency>
-			
+
 			<!-- assertj -->
 			<dependency>
 				<groupId>org.assertj</groupId>
@@ -658,7 +651,7 @@
 				<version>${assertj.version}</version>
 				<scope>test</scope>
 			</dependency>
-			
+
 			<!-- mockito -->
 			<dependency>
 				<groupId>org.mockito</groupId>
@@ -815,6 +808,103 @@
 				<scope>test</scope>
 			</dependency>
 			<!-- TEST end -->
+			<!-- manager2所需包 -->
+			<dependency>
+				<groupId>org.eclipse</groupId>
+				<artifactId>swt</artifactId>
+				<version>3.3.0-v3346</version>
+			</dependency>
+			<dependency>
+				<groupId>org.eclipse</groupId>
+				<artifactId>draw2d</artifactId>
+				<version>3.2.100-v20070529</version>
+			</dependency>
+			<dependency>
+				<groupId>org.eclipse</groupId>
+				<artifactId>jface</artifactId>
+				<version>3.3.0-I20070606-0010</version>
+			</dependency>
+			<dependency>
+				<groupId>bitwalker</groupId>
+				<artifactId>UserAgentUtils</artifactId>
+				<version>1.12</version>
+			</dependency>
+			<dependency>
+				<groupId>org.zeroturnaround</groupId>
+				<artifactId>zt-zip</artifactId>
+				<version>1.6</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-beans</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-context</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-aop</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-tx</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-jdbc</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cglib</groupId>
+				<artifactId>cglib</artifactId>
+				<version>3.1</version>
+			</dependency>
+			<dependency>
+				<groupId>org.wltea</groupId>
+				<artifactId>analyzer</artifactId>
+				<version>2012_u6</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.alibaba</groupId>
+				<artifactId>druid</artifactId>
+				<version>${druid.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>mysql</groupId>
+				<artifactId>mysql-connector-java</artifactId>
+				<version>${mysql.driver.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>net.sourceforge.jtds</groupId>
+				<artifactId>jtds</artifactId>
+				<version>${mssql.driver.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-web</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-oxm</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>taglibs</groupId>
+				<artifactId>standard</artifactId>
+				<version>1.1.2</version>
+			</dependency>
+			<!-- manager2所需包 end -->
 		</dependencies>
 	</dependencyManagement>
 
@@ -960,7 +1050,7 @@
 					<artifactId>jetty-maven-plugin</artifactId>
 					<version>${jetty.version}</version>
 				</plugin>
-				<!-- tomcat插件  -->
+				<!-- tomcat插件 -->
 				<plugin>
 					<groupId>org.apache.tomcat.maven</groupId>
 					<artifactId>tomcat7-maven-plugin</artifactId>
